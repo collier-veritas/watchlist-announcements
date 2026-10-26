@@ -1,0 +1,10 @@
+watchlist = "watchlist.txt"
+sent_log = "state/sent.json"
+disclaimer = "disclaimer.html"
+
+# Mailbox the Entra app may send as (same app as the other AutoEmails projects).
+sender = "veritas-ai@veritassecurities.com.au"
+
+# Sydney time, Monday-Friday. Covers pre-open and after-close releases.
+window_start = "07:00"
+window_end = "20:00"

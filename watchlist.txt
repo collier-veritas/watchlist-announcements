@@ -1,0 +1,33 @@
+# ASX codes to watch, one per line. Edit on GitHub; the next check picks it up.
+# Anything after # is ignored. Not watched: PFG, FLX, NXD, ESFUT, APSPOT.
+VRS
+VBC
+SPZ
+SPA
+RMS
+RDM
+OSM
+OCL
+OCC
+MXO
+MMA
+LYL
+LPE
+LKY
+KME
+HCH
+XRG
+FID
+FCL
+EXP
+ESK
+EOL
+DEM
+CCA
+CAF
+BET
+ALY
+AHE
+AER
+3DP
+SND
