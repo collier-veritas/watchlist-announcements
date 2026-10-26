@@ -29,3 +29,8 @@ def test_body_shows_release_time_in_sydney_and_disclaimer():
     assert "9:11am" in body
     assert "Price sensitive" in body
     assert "<p>DISCLAIMER</p>" in body
+
+
+def test_body_has_no_sign_off():
+    body = build_message(A, b"%PDF", ["a@x.com"], "")["body"]["content"]
+    assert "Regards" not in body

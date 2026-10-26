@@ -22,7 +22,7 @@ def build_message(a, pdf, recipients, disclaimer_html):
         f"<p><b>{escape(a.ticker)}</b> &ndash; {escape(a.headline)}<br>"
         f"Released {_release_time(a)} &middot; {escape(a.type.title())} &middot; "
         f"Price sensitive: {'Yes' if a.price_sensitive else 'No'}</p>"
-        f"<p>Regards,<br>Veritas AI</p>{disclaimer_html}</div>"
+        f"{disclaimer_html}</div>"
     )
     return {
         "subject": f"{a.ticker} - {a.headline}",
