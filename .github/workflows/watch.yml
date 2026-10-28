@@ -27,7 +27,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
+      # Tip of main, not the trigger-time SHA: a run queued behind another must
+      # see the sent-log that run pushed, or it re-sends the same announcements.
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
