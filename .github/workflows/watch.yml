@@ -2,8 +2,10 @@ name: Watchlist Announcements
 
 on:
   schedule:
-    # Every 5 min, 7am-8pm Sydney Mon-Fri (UTC ranges cover both AEST and AEDT;
-    # main.py enforces the exact Sydney window). GitHub may run these late.
+    # Backup only. GitHub drops most of these, so cron-job.org is the real
+    # trigger: it calls the workflow_dispatch API every 5 min, 7am-8pm Sydney
+    # Mon-Fri. UTC ranges cover both AEST and AEDT; main.py enforces the
+    # exact Sydney window.
     - cron: "*/5 20-23 * * 0-4"
     - cron: "*/5 0-9 * * 1-5"
   workflow_dispatch:
