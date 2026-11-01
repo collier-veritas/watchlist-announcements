@@ -19,6 +19,27 @@ def test_notice_of_meeting_is_admin():
     assert is_routine_admin(ann("NOTICE OF MEETING", "Notice of Annual General Meeting/Proxy Form"))
 
 
+def test_meeting_paperwork_headlines_are_admin():
+    # Real NOTICE OF MEETING headlines from the watchlist, Oct-Nov 2026.
+    for headline in [
+        "Results of 2026 AGM",
+        "Results of Meeting",
+        "Addendum to Notice of AGM and Replacement Proxy Form",
+        "Lycopodium Limited - ASX Listing Rule 3.13.1",
+        "Key Dates",
+        "Annual General Meeting - Notice of Meeting",
+        "Annual General Meeting Date and Director Nominations",
+        "Letter to Shareholders re AGM",
+        "Notice of General Meeting/Proxy Form",
+        "Saunders 2026 AGM Results of Resolutions",
+    ]:
+        assert is_routine_admin(ann("NOTICE OF MEETING", headline)), headline
+
+
+def test_asic_extension_filed_as_meeting_notice_is_sent():
+    assert not is_routine_admin(ann("NOTICE OF MEETING", "ASIC Grants Extensions for FY26 Reporting and AGM"))
+
+
 def test_cessation_of_securities_is_admin():
     assert is_routine_admin(ann("ISSUED CAPITAL", "Notification of cessation of securities - VRS"))
 
