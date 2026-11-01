@@ -36,6 +36,25 @@ def test_meeting_paperwork_headlines_are_admin():
         assert is_routine_admin(ann("NOTICE OF MEETING", headline)), headline
 
 
+def test_share_issue_forms_are_admin():
+    # Real ISSUED CAPITAL headlines from the watchlist, Oct-Nov 2026.
+    for headline in [
+        "Notification of buy-back - 3DP",
+        "Update - Notification of buy-back - OCL",
+        "Proposed issue of securities - ALY",
+        "Notification regarding unquoted securities - BET",
+        "Application for quotation of securities - CAF",
+        "Notification of cessation of securities - CAF",
+        "Cleansing Notice",
+        "Notice under Section 708A(5)(e)",
+    ]:
+        assert is_routine_admin(ann("ISSUED CAPITAL", headline)), headline
+
+
+def test_acquisition_completion_filed_as_issued_capital_is_sent():
+    assert not is_routine_admin(ann("ISSUED CAPITAL", "GMSL Acquisition Completion"))
+
+
 def test_asic_extension_filed_as_meeting_notice_is_sent():
     assert not is_routine_admin(ann("NOTICE OF MEETING", "ASIC Grants Extensions for FY26 Reporting and AGM"))
 
